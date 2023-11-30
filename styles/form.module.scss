@@ -1,0 +1,100 @@
+@import "./_mixins.module";
+
+.row {
+  --side-width: var(--form-side-width, 140px);
+  --control-height: var(--form-control-height, 42px);
+  --control-radius: var(--form-control-radius, 4px);
+  --textarea-height: var(--form-textarea-height, 64px);
+
+  display: flex;
+  justify-self: stretch;
+  gap: var(--space-big);
+  max-width: 600px;
+  width: 100%;
+  padding-block: var(--space-base);
+  border-block-start: 1px solid var(--color-border);
+
+  @include device(mobile) {
+    display: block;
+  }
+}
+
+.field {
+  flex: 1;
+
+  @include device(mobile) {
+    & + & {
+      margin-block-start: var(--space-big);
+    }
+  }
+
+  @include device(notMobile) {
+    display: flex;
+  }
+}
+
+.side {
+  @include device(mobile) {
+    margin-block-end: var(--space-tiny);
+  }
+
+  @include device(notMobile) {
+    flex: 0 0 var(--side-width);
+    padding-inline-end: var(--space-small);
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  min-height: var(--control-height);
+  font-weight: 500;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.message,
+.info {
+  margin-block-start: var(--space-small);
+  color: var(--color-text-secondary);
+  font-size: var(--font-tiny);
+}
+
+.message {
+  &.error {
+    color: var(--color-danger);
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.inlineLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-small);
+
+  &:not(:first-child) {
+    margin-inline-start: var(--space-base);
+  }
+
+  input {
+    margin: 0;
+  }
+}
+
+.input {
+  width: 100%;
+}
+
+.textarea {
+  width: 100%;
+  height: var(--textarea-height);
+}
