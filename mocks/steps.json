@@ -1,0 +1,22 @@
+[
+  {
+    "number": 2,
+    "slug": "connect-wallet",
+    "text": "Connect Wallet"
+  },
+  {
+    "number": 3,
+    "slug": "participate",
+    "text": "Participate"
+  },
+  {
+    "number": 4,
+    "slug": "provide-personal-information",
+    "text": "Provide Personal Information"
+  },
+  {
+    "number": 5,
+    "slug": "done",
+    "text": "Done"
+  }
+]
