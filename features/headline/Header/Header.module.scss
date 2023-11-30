@@ -1,0 +1,35 @@
+@import "@/styles/_mixins.module";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  min-width: var(--device-min-size);
+  background: var(--color-background);
+  box-shadow: 0 0 0 1px var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-base);
+  height: var(--panel-size, 60px);
+  padding: 0 var(--space-base);
+}
+
+.logo {
+  flex: 0 0 auto;
+  font-size: 28px;
+
+  @include device(mobile) {
+    font-size: var(--font-base);
+  }
+}
+
+.actions {
+  flex: 0 0 auto;
+}

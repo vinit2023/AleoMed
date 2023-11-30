@@ -1,0 +1,41 @@
+@import "@/styles/_mixins.module";
+
+.layout {
+  --sidebar-size: 48px;
+  --panel-size: 48px;
+
+  min-width: var(--device-min-size);
+  padding: var(--panel-size) 0 var(--panel-size) 0;
+
+  @include device(notMobile) {
+    --sidebar-size: 232px;
+    --panel-size: 60px;
+
+    padding-block-end: 0;
+  }
+
+  @include device(miniMobile) {
+    padding-inline-start: 0;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    @include device(notMiniMobile) {
+      display: none;
+    }
+  }
+}
+
+.main {
+  grid-area: main;
+  padding: 0 var(--space-base);
+}
+
+.content {
+  max-width: 1024px;
+  margin: 0 auto;
+}
