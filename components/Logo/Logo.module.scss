@@ -1,0 +1,23 @@
+@import "@/styles/_mixins.module";
+
+.logo {
+  --logo-size: 32px;
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-small);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-weight: 700;
+
+  @include device(mobile) {
+    --logo-size: 16px;
+    gap: var(--space-small);
+  }
+}
+
+.image {
+  width: var(--logo-size);
+  height: calc(var(--logo-size) / 0.78);
+  fill: currentColor;
+}

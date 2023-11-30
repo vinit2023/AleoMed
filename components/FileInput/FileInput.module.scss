@@ -1,0 +1,143 @@
+.fileInput {
+  --file-preview-size: 140px;
+  --vertical-padding: 60px;
+
+  flex: 1;
+  position: relative;
+  margin-block: 40px;
+  color: var(--color-text-secondary);
+}
+
+.compact {
+  margin: 0;
+  font-size: var(--font-base);
+  font-weight: 400;
+}
+
+.area,
+.files {
+  border: 1px dashed var(--color-text-secondary);
+  border-radius: 16px;
+  background: var(--color-background-alt);
+
+  .compact & {
+    border: 1px solid var(--color-border);
+    border-radius: var(--control-radius, 4px);
+  }
+}
+
+.active {
+  border: 1px solid var(--color-brand);
+  box-shadow: 0 0 0 8px rgba(#25a6ff, 0.4);
+}
+
+.content {
+  padding: var(--vertical-padding) 40px;
+  text-align: center;
+  line-height: 1.2;
+
+  .compact & {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-small);
+    padding-inline: var(--space-base);
+  }
+}
+
+.title {
+  font-size: var(--font-title);
+  font-weight: bold;
+
+  .compact & {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+}
+
+.or {
+  margin: 20px 0 28px;
+  color: var(--color-text-tertiary);
+  font-size: var(--font-base);
+  font-weight: bold;
+
+  .compact & {
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+}
+
+.button {
+  cursor: pointer;
+}
+
+.files {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-base);
+  min-height: 274px;
+  padding: var(--space-base);
+
+  .compact & {
+    min-height: var(--control-height);
+    padding: var(--vertical-padding) var(--space-tiny);
+  }
+}
+
+.file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: var(--file-preview-size);
+  height: var(--file-preview-size);
+  border-radius: 8px;
+  background: var(--color-brand);
+  color: var(--color-text-alt);
+
+  .compact & {
+    width: auto;
+    height: auto;
+    padding-inline: var(--space-small) var(--space-big);
+    border-radius: var(--control-radius);
+  }
+}
+
+.ext {
+  font-size: 60px;
+  line-height: 1;
+}
+
+.fileName {
+  font-size: var(--font-base);
+
+  .compact & {
+    font-size: var(--font-small);
+  }
+}
+
+.delete {
+  position: absolute;
+  inset-block-start: 4px;
+  inset-inline-end: 4px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-size: 24px;
+  cursor: pointer;
+
+  .compact & {
+    inset-block-start: 3px;
+    inset-inline-end: 4px;
+    font-size: 12px;
+  }
+}
